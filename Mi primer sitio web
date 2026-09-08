@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Biodiversidad de Uruguay</title>
+
+<style>
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background-color: #f4f7f4;
+color: #26352b;
+line-height: 1.6;
+}
+
+header {
+background: linear-gradient(135deg, #1f5c42, #4d8b68);
+color: white;
+text-align: center;
+padding: 70px 20px;
+}
+
+header h1 {
+font-size: 45px;
+margin-bottom: 15px;
+}
+
+header p {
+font-size: 19px;
+max-width: 750px;
+margin: auto;
+}
+
+nav {
+background-color: #173d2d;
+padding: 15px;
+text-align: center;
+position: sticky;
+top: 0;
+z-index: 1000;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+margin: 0 10px;
+font-weight: bold;
+font-size: 14px;
+}
+
+nav a:hover {
+color: #bde5c9;
+}
+
+section {
+max-width: 1100px;
+margin: auto;
+padding: 60px 20px;
+}
+
+section h2 {
+color: #1f5c42;
+font-size: 32px;
+margin-bottom: 20px;
+text-align: center;
+}
+
+section h3 {
+color: #347653;
+margin-bottom: 10px;
+}
+
+.intro {
+text-align: center;
+max-width: 850px;
+margin: auto;
+font-size: 18px;
+}
+
+.cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 25px;
+margin-top: 30px;
+}
+
+.card {
+background-color: white;
+border-radius: 15px;
+padding: 25px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+transition: transform 0.3s;
+}
+
+.card:hover {
+transform: translateY(-5px);
+}
+
+.card h3 {
+font-size: 22px;
+}
+
+.icon {
+font-size: 45px;
+margin-bottom: 10px;
+}
+
+.species {
+background-color: #e6f1e9;
+}
+
+.scientific {
+font-style: italic;
+color: #63766a;
+}
+
+
+.italiano {
+background-color: #eef5ef;
+border-top: 5px solid #4d8b68;
+border-bottom: 5px solid #4d8b68;
+}
+
+.italiano p {
+margin-bottom: 15px;
+}
+
+.conservation-list {
+margin-top: 20px;
+padding-left: 25px;
+}
+
+.conservation-list li {
+margin-bottom: 10px;
+}
+
+.quiz {
+background-color: white;
+border-radius: 15px;
+padding: 30px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+max-width: 750px;
+margin: auto;
+}
+
+.question {
+margin-bottom: 25px;
+}
+
+.question p {
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.question label {
+display: block;
+margin: 7px 0;
+}
+
+button {
+background-color: #2d7651;
+color: white;
+border: none;
+padding: 12px 25px;
+border-radius: 8px;
+cursor: pointer;
+font-size: 16px;
+}
+
+button:hover {
+background-color: #1f5c42;
+}
+
+#resultado {
+margin-top: 20px;
+font-size: 20px;
+font-weight: bold;
+}
+
+
+.ia {
+background-color: #fff8e7;
+border-left: 6px solid #d19b32;
+}
+
+
+
+.sources {
+background-color: #e9eeea;
+}
+
+.sources ul {
+padding-left: 25px;
+}
+
+.sources li {
+margin-bottom: 8px;
+}
+
+footer {
+background-color: #173d2d;
+color: white;
+text-align: center;
+padding: 30px 20px;
+}
+
+
+@media (max-width: 700px) {
+
+header h1 {
+font-size: 34px;
+}
+
+nav a {
+display: inline-block;
+margin: 5px;
+}
+
+section {
+padding: 45px 15px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Biodiversidad de Uruguay</h1>
+
+<p>
+Un recorrido por los ecosistemas, la flora y la fauna
+que forman parte de la riqueza natural de nuestro país.
+</p>
+</header>
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#ecosistemas">Ecosistemas</a>
+<a href="#especies">Especies</a>
+<a href="#conservacion">Conservación</a>
+<a href="#italiano">Italiano</a>
+<a href="#quiz">Quiz</a>
+<a href="#ia">IA</a>
+<a href="#fuentes">Fuentes</a>
+</nav>
+
+
+<section id="inicio">
+
+<h2>¿Qué es la biodiversidad?</h2>
+
+<div class="intro">
+
+<p>
+La biodiversidad es la variedad de seres vivos que existen
+en un determinado lugar. Incluye animales, plantas,
+microorganismos y también los ecosistemas en los que viven.
+</p>
+
+<br>
+
+<p>
+Uruguay posee una importante diversidad de ambientes
+naturales. Sus praderas, montes, humedales y costas
+constituyen hábitats para numerosas especies.
+</p>
+
+<br>
+
+<p>
+Conocer esta diversidad permite comprender la importancia
+de proteger los ecosistemas y utilizar los recursos
+naturales de manera responsable.
+</p>
+
+</div>
+
+</section>
+
+
+<section id="ecosistemas">
+
+<h2> Ecosistemas de Uruguay</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="icon">🌾</div>
+
+<h3>Praderas</h3>
+
+<p>
+Son uno de los ambientes más característicos de Uruguay.
+Están dominadas principalmente por diferentes especies
+de gramíneas y poseen una gran diversidad de animales.
+</p>
+
+</div>
+
+
+<h3>Monte serrano</h3>
+
+<p>
+Se desarrolla principalmente en zonas de sierras y
+terrenos rocosos. Presenta árboles, arbustos y plantas
+adaptadas a las condiciones del ambiente.
+</p>
+
+</div>
+
+
+<h3>Humedales</h3>
+
+<p>
+Son ambientes donde el agua tiene un papel fundamental.
+Funcionan como refugio y zona de alimentación y
+reproducción para numerosas especies.
+</p>
+
+
+<h3>Ambiente costero</h3>
+
+<p>
+Comprende playas, dunas, costas rocosas y otros
+ambientes relacionados con el océano Atlántico
+y el Río de la Plata.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="especies" class="species">
+
+<h2>Flora y fauna</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Zorro de campo</h3>
+
+<p class="scientific">
+Lycalopex gymnocercus
+</p>
+
+<p>
+Es un mamífero que habita diferentes ambientes
+de Uruguay. Tiene una alimentación variada y
+cumple un papel importante dentro de los ecosistemas.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Venado de campo</h3>
+
+<p class="scientific">
+Ozotoceros bezoarticus
+</p>
+
+<p>
+Es un herbívoro característico de las praderas.
+Actualmente sus poblaciones requieren medidas de
+conservación debido a la pérdida de hábitat.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Coronilla</h3>
+
+<p class="scientific">
+Scutia buxifolia
+</p>
+
+<p>
+Es un árbol nativo de Uruguay que puede encontrarse
+principalmente en diferentes tipos de montes.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Ceibo</h3>
+
+<p class="scientific">
+Erythrina crista-galli
+</p>
+
+<p>
+Es un árbol nativo de la región y una de las especies
+vegetales más reconocidas de Uruguay.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="conservacion">
+
+<h2>Conservación de la biodiversidad</h2>
+
+<div class="intro">
+
+<p>
+Los ecosistemas pueden verse afectados por diferentes
+actividades humanas. La transformación del territorio,
+la contaminación, la introducción de especies exóticas
+y la pérdida de hábitats pueden reducir la biodiversidad.
+</p>
+
+<br>
+
+<p>
+Algunas acciones que contribuyen a su conservación son:
+</p>
+
+</div>
+
+
+<ul class="conservation-list">
+
+<li>Proteger los ambientes naturales.</li>
+
+<li>Evitar la contaminación del agua y del suelo.</li>
+
+<li>Conservar los bosques y montes nativos.</li>
+
+<li>Proteger las especies amenazadas.</li>
+
+<li>Reducir y gestionar correctamente los residuos.</li>
+
+<li>Promover la educación ambiental.</li>
+
+</ul>
+
+</section>
+
+
+<section id="italiano" class="italiano">
+
+<h2>🇮🇹 La biodiversità dell'Uruguay</h2>
+
+<p>
+La biodiversità è la varietà degli esseri viventi presenti
+in un determinato ambiente. L'Uruguay possiede diversi
+ecosistemi, come praterie, boschi, zone umide e ambienti
+costieri.
+</p>
+
+<p>
+Le praterie sono uno degli ambienti più caratteristici
+del paese e ospitano numerose specie di piante e animali.
+Anche le zone umide sono molto importanti perché offrono
+rifugio e cibo a molte specie.
+</p>
+
+<p>
+La conservazione della biodiversità è fondamentale per
+mantenere l'equilibrio degli ecosistemi. Per questo motivo
+è importante proteggere gli ambienti naturali, evitare
+l'inquinamento e utilizzare le risorse in modo responsabile.
+</p>
+
+<p>
+Conoscere la natura del nostro paese ci permette di
+comprendere meglio il suo valore e l'importanza di
+conservarla per le generazioni future.
+</p>
+
+</section>
+
+
+<section id="quiz">
+
+<h2>¿Cuánto aprendiste?</h2>
+
+<div class="quiz">
+
+<div class="question">
+
+<p>
+1. ¿Qué es la biodiversidad?
+</p>
+
+<label>
+<input type="radio" name="q1" value="correct">
+La variedad de seres vivos y ecosistemas.
+</label>
+
+<label>
+<input type="radio" name="q1" value="wrong">
+Un único tipo de ecosistema.
+</label>
+
+<label>
+<input type="radio" name="q1" value="wrong">
+Solamente las especies animales.
+</label>
+
+</div>
+
+
+<div class="question">
+
+<p>
+2. ¿Cuál es uno de los ambientes característicos
+de Uruguay?
+</p>
+
+<label>
+<input type="radio" name="q2" value="correct">
+La pradera.
+</label>
+
+<label>
+<input type="radio" name="q2" value="wrong">
+La tundra.
+</label>
+
+<label>
+<input type="radio" name="q2" value="wrong">
+La taiga.
+</label>
+
+</div>
+
+
+<div class="question">
+
+<p>
+3. ¿Por qué es importante conservar la biodiversidad?
+</p>
+
+<label>
+<input type="radio" name="q3" value="correct">
+Para mantener el equilibrio de los ecosistemas.
+</label>
+
+<label>
+<input type="radio" name="q3" value="wrong">
+Para eliminar los ambientes naturales.
+</label>
+
+<label>
+<input type="radio" name="q3" value="wrong">
+Para reducir la cantidad de especies.
+</label>
+
+</div>
+
+
+<button onclick="corregirQuiz()">
+Corregir respuestas
+</button>
+
+<p id="resultado"></p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+DECLARACIÓN DE IA
+========================== -->
+
+<section id="ia" class="ia">
+
+<h2>🤖 Declaración de uso de Inteligencia Artificial</h2>
+
+<p>
+Para la realización de este proyecto se utilizaron
+herramientas de Inteligencia Artificial como apoyo
+durante el proceso de desarrollo.
+</p>
+
+<br>
+
+<p>
+La IA fue utilizada principalmente para generar y revisar
+código HTML, CSS y JavaScript, proponer la estructura
+general del sitio y ayudar con la redacción inicial
+de algunos contenidos.
+</p>
+
+<br>
+
+<p>
+El contenido generado fue revisado y adaptado por los
+integrantes del equipo. La utilización de IA funcionó
+como una herramienta de apoyo y no como sustituto del
+trabajo realizado por los estudiantes.
+</p>
+
+<br>
+
+<p>
+<strong>Herramienta utilizada:</strong> ChatGPT.
+</p>
+
+</section>
+
+<section id="fuentes" class="sources">
+
+<h2>Fuentes consultadas</h2>
+
+<ul>
+
+<li>
+Ministerio de Ambiente de Uruguay.
+Información sobre biodiversidad y ecosistemas.
+</li>
+
+<li>
+Sistema Nacional de Áreas Protegidas (SNAP).
+</li>
+
+<li>
+Materiales educativos proporcionados por la institución.
+</li>
+
+<li>
+Material de Ciencias de la Vida utilizado durante el curso.
+</li>
+
+</ul>
+
+</section>
+
+
+<footer>
+
+<p>
+Proyecto de Ciencias de la Computación
+</p>
+
+<p>
+Biodiversidad de Uruguay · Scuola Italiana
+</p>
+
+</footer>
+
+
+<!-- =========================
+JAVASCRIPT
+========================== -->
+
+<script>
+
+function corregirQuiz() {
+
+let puntaje = 0;
+
+const respuestas = document.querySelectorAll(
+'input[type="radio"]:checked'
+);
+
+respuestas.forEach(function(respuesta) {
+
+if (respuesta.value === "correct") {
+puntaje++;
+}
+
+});
+
+const resultado = document.getElementById("resultado");
+
+if (respuestas.length < 3) {
+
+resultado.textContent =
+"Respondé todas las preguntas antes de corregir.";
+
+} else {
+
+resultado.textContent =
+"Obtuviste " + puntaje + " de 3 respuestas correctas. 🎉";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
