@@ -295,12 +295,6 @@ naturales de manera responsable.
 
 <h2> Ecosistemas de Uruguay</h2>
 
-<div class="cards">
-
-<div class="card">
-
-<div class="icon">🌾</div>
-
 <h3>Praderas</h3>
 
 <p>
@@ -587,14 +581,9 @@ Corregir respuestas
 
 </section>
 
-
-<!-- =========================
-DECLARACIÓN DE IA
-========================== -->
-
 <section id="ia" class="ia">
 
-<h2>🤖 Declaración de uso de Inteligencia Artificial</h2>
+<h2>Declaración de uso de Inteligencia Artificial</h2>
 
 <p>
 Para la realización de este proyecto se utilizaron
@@ -667,12 +656,6 @@ Biodiversidad de Uruguay · Scuola Italiana
 </p>
 
 </footer>
-
-
-<!-- =========================
-JAVASCRIPT
-========================== -->
-
 <script>
 
 function corregirQuiz() {
