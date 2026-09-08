@@ -684,7 +684,7 @@ resultado.textContent =
 } else {
 
 resultado.textContent =
-"Obtuviste " + puntaje + " de 3 respuestas correctas. 🎉";
+"Obtuviste " + puntaje + " de 3 respuestas correctas. ";
 
 }
 
