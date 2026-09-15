@@ -1,1 +1,1043 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El cerebro y las emociones</title>
 
+<style>
+
+/* ===== CONFIGURACIÓN GENERAL ===== */
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #fff7fa;
+color: #513b46;
+line-height: 1.65;
+}
+
+
+/* ===== PORTADA ===== */
+
+header {
+min-height: 520px;
+padding: 70px 20px;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+text-align: center;
+
+background:
+radial-gradient(circle at 15% 20%, #ffd8e8 0, transparent 28%),
+radial-gradient(circle at 85% 25%, #f6c9dc 0, transparent 30%),
+linear-gradient(135deg, #fff1f7, #f9d9e7);
+
+position: relative;
+overflow: hidden;
+}
+
+header::before {
+content: "♡";
+position: absolute;
+left: 5%;
+top: 8%;
+font-size: 170px;
+color: rgba(255,255,255,0.5);
+}
+
+header::after {
+content: "✦";
+position: absolute;
+right: 8%;
+bottom: 8%;
+font-size: 140px;
+color: rgba(255,255,255,0.5);
+}
+
+.logo {
+font-size: 70px;
+margin-bottom: 12px;
+}
+
+header h1 {
+font-size: clamp(40px, 7vw, 64px);
+color: #a63e6b;
+margin-bottom: 18px;
+position: relative;
+}
+
+header p {
+max-width: 760px;
+font-size: 20px;
+color: #704f5e;
+position: relative;
+}
+
+
+/* ===== MENÚ ===== */
+
+nav {
+position: sticky;
+top: 0;
+z-index: 10;
+
+background: rgba(255, 244, 248, 0.95);
+
+padding: 16px;
+text-align: center;
+
+border-bottom: 1px solid #efc5d7;
+}
+
+nav a {
+display: inline-block;
+color: #843554;
+text-decoration: none;
+font-weight: bold;
+margin: 4px 11px;
+font-size: 14px;
+}
+
+nav a:hover {
+color: #d55787;
+}
+
+
+/* ===== SECCIONES ===== */
+
+section {
+max-width: 1080px;
+margin: auto;
+padding: 75px 22px;
+}
+
+h2 {
+text-align: center;
+color: #a63e6b;
+font-size: 36px;
+margin-bottom: 15px;
+}
+
+.subtitle {
+text-align: center;
+max-width: 760px;
+margin: 0 auto 35px;
+color: #765966;
+font-size: 18px;
+}
+
+
+/* ===== CAJAS ===== */
+
+.box,
+.card,
+.quiz,
+.italian-box,
+.ia-box {
+background: white;
+border: 1px solid #f1cfdd;
+border-radius: 25px;
+box-shadow: 0 10px 30px rgba(168, 72, 113, 0.09);
+}
+
+.box {
+padding: 38px;
+}
+
+.box p {
+margin-bottom: 17px;
+}
+
+
+/* ===== TARJETAS ===== */
+
+.cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+gap: 24px;
+}
+
+.card {
+padding: 28px;
+transition: 0.25s;
+}
+
+.card:hover {
+transform: translateY(-7px);
+box-shadow: 0 16px 35px rgba(168, 72, 113, 0.15);
+}
+
+.emoji {
+font-size: 48px;
+margin-bottom: 8px;
+}
+
+.card h3,
+.part h3 {
+color: #ad416f;
+margin-bottom: 9px;
+font-size: 22px;
+}
+
+
+/* ===== CEREBRO ===== */
+
+.band {
+max-width: none;
+background: #fff0f6;
+}
+
+.band-inner {
+max-width: 1080px;
+margin: auto;
+}
+
+.parts {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 20px;
+}
+
+.part {
+background: rgba(255,255,255,0.8);
+padding: 25px;
+border: 1px solid #edc4d6;
+border-radius: 20px;
+}
+
+
+/* ===== ITALIANO ===== */
+
+.italian {
+max-width: none;
+background: linear-gradient(135deg, #fff7fa, #ffe9f1);
+border-top: 1px solid #f3c8d9;
+border-bottom: 1px solid #f3c8d9;
+}
+
+.italian-box {
+max-width: 900px;
+margin: auto;
+padding: 38px;
+}
+
+.italian-box p {
+margin-bottom: 17px;
+}
+
+
+/* ===== QUIZ ===== */
+
+.quiz {
+max-width: 760px;
+margin: auto;
+padding: 38px;
+}
+
+.question {
+margin-bottom: 28px;
+}
+
+.question p {
+font-weight: bold;
+color: #8d385c;
+margin-bottom: 9px;
+}
+
+label {
+display: block;
+margin: 8px 0;
+cursor: pointer;
+}
+
+input {
+accent-color: #d45a88;
+margin-right: 7px;
+}
+
+button {
+border: none;
+border-radius: 30px;
+
+padding: 14px 28px;
+
+background: linear-gradient(135deg, #dc638f, #ad416f);
+
+color: white;
+
+font-size: 16px;
+font-weight: bold;
+
+cursor: pointer;
+
+display: block;
+margin: auto;
+
+transition: 0.3s;
+}
+
+button:hover {
+transform: scale(1.04);
+}
+
+#resultado {
+text-align: center;
+color: #a63e6b;
+font-weight: bold;
+font-size: 19px;
+margin-top: 22px;
+}
+
+
+/* ===== DECLARACIÓN DE IA ===== */
+
+.ia {
+max-width: none;
+background: #fff4d9;
+}
+
+.ia-box {
+max-width: 900px;
+margin: auto;
+padding: 35px;
+background: #fffdf8;
+}
+
+.ia-box p {
+margin-bottom: 17px;
+}
+
+
+/* ===== FUENTES ===== */
+
+.sources {
+background: #fcecf3;
+border-radius: 24px;
+padding: 30px;
+}
+
+.sources ul {
+padding-left: 24px;
+}
+
+.sources li {
+margin-bottom: 8px;
+}
+
+
+/* ===== PIE DE PÁGINA ===== */
+
+footer {
+text-align: center;
+background: #7d304e;
+color: white;
+padding: 35px 20px;
+}
+
+footer p {
+margin: 5px;
+}
+
+
+/* ===== CELULAR ===== */
+
+@media (max-width: 650px) {
+
+nav a {
+margin: 3px 6px;
+font-size: 12px;
+}
+
+section {
+padding: 55px 16px;
+}
+
+.box,
+.quiz,
+.italian-box {
+padding: 25px;
+}
+
+header {
+min-height: 460px;
+}
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ===== PORTADA ===== -->
+
+<header>
+
+<div class="logo">🧠</div>
+
+<h1>
+El cerebro y las emociones
+</h1>
+
+<p>
+Un recorrido por el cerebro humano, las emociones
+y la relación entre nuestros pensamientos y nuestro cuerpo.
+</p>
+
+</header>
+
+
+<!-- ===== MENÚ ===== -->
+
+<nav>
+
+<a href="#inicio">Inicio</a>
+
+<a href="#cerebro">Cerebro</a>
+
+<a href="#emociones">Emociones</a>
+
+<a href="#italiano">Italiano</a>
+
+<a href="#quiz">Quiz</a>
+
+<a href="#ia">IA</a>
+
+<a href="#fuentes">Fuentes</a>
+
+</nav>
+
+
+<!-- ===== INTRODUCCIÓN ===== -->
+
+<section id="inicio">
+
+<h2>
+♡ ¿Qué son las emociones?
+</h2>
+
+<p class="subtitle">
+Las emociones forman parte de nuestra vida cotidiana
+y están relacionadas con diferentes procesos del cerebro.
+</p>
+
+<div class="box">
+
+<p>
+Las emociones son respuestas que aparecen frente a
+diferentes situaciones, pensamientos o estímulos.
+Pueden influir en nuestra atención, memoria,
+comportamiento y relaciones con otras personas.
+</p>
+
+<p>
+Aunque solemos pensar en las emociones y el pensamiento
+como cosas separadas, ambos procesos están estrechamente
+relacionados.
+</p>
+
+<p>
+El cerebro recibe información del entorno, la procesa
+y genera respuestas que pueden incluir cambios físicos,
+pensamientos y comportamientos.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===== CEREBRO ===== -->
+
+<section id="cerebro" class="band">
+
+<div class="band-inner">
+
+<h2>
+🧠 Partes importantes del cerebro
+</h2>
+
+<p class="subtitle">
+Diferentes regiones cerebrales participan en procesos
+relacionados con la memoria, el aprendizaje, el movimiento
+y las emociones.
+</p>
+
+
+<div class="parts">
+
+
+<div class="part">
+
+<h3>
+Corteza cerebral
+</h3>
+
+<p>
+Participa en funciones complejas como el pensamiento,
+la percepción, el lenguaje, la planificación y la
+toma de decisiones.
+</p>
+
+</div>
+
+
+<div class="part">
+
+<h3>
+Amígdala
+</h3>
+
+<p>
+Está relacionada con el procesamiento de determinadas
+respuestas emocionales y con la valoración de
+situaciones relevantes.
+</p>
+
+</div>
+
+
+<div class="part">
+
+<h3>
+Hipocampo
+</h3>
+
+<p>
+Tiene un papel importante en la formación y recuperación
+de determinados tipos de recuerdos y en la orientación
+espacial.
+</p>
+
+</div>
+
+
+<div class="part">
+
+<h3>
+Hipotálamo
+</h3>
+
+<p>
+Participa en la regulación de funciones del organismo
+como el hambre, la temperatura corporal y el sueño.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===== EMOCIONES ===== -->
+
+<section id="emociones">
+
+<h2>
+🌸 Algunas emociones
+</h2>
+
+<p class="subtitle">
+Cada emoción puede aparecer ante situaciones diferentes
+y cumplir distintas funciones.
+</p>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="emoji">
+😊
+</div>
+
+<h3>
+Alegría
+</h3>
+
+<p>
+Puede aparecer ante experiencias agradables
+y favorecer la interacción social.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="emoji">
+😢
+</div>
+
+<h3>
+Tristeza
+</h3>
+
+<p>
+Puede aparecer frente a pérdidas o situaciones
+difíciles y favorecer la búsqueda de apoyo.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="emoji">
+😨
+</div>
+
+<h3>
+Miedo
+</h3>
+
+<p>
+Ayuda a detectar situaciones que pueden representar
+un peligro y preparar al organismo para responder.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="emoji">
+😡
+</div>
+
+<h3>
+Enojo
+</h3>
+
+<p>
+Puede aparecer ante frustraciones, conflictos
+o situaciones que una persona considera injustas.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ===== CEREBRO Y CUERPO ===== -->
+
+<section>
+
+<h2>
+✨ Cerebro, emociones y cuerpo
+</h2>
+
+<p class="subtitle">
+Las emociones también pueden producir cambios físicos
+en nuestro organismo.
+</p>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="emoji">
+💓
+</div>
+
+<h3>
+Corazón
+</h3>
+
+<p>
+Algunas emociones pueden producir cambios temporales
+en la frecuencia cardíaca.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="emoji">
+🫁
+</div>
+
+<h3>
+Respiración
+</h3>
+
+<p>
+Las situaciones emocionales pueden modificar
+temporalmente la respiración.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="emoji">
+⚡
+</div>
+
+<h3>
+Sistema nervioso
+</h3>
+
+<p>
+El sistema nervioso coordina respuestas del organismo
+frente a diferentes estímulos.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ===== ITALIANO ===== -->
+
+<section id="italiano" class="italian">
+
+<div class="italian-box">
+
+<h2>
+🇮🇹 Il cervello e le emozioni
+</h2>
+
+
+<p>
+Il cervello è uno degli organi più complessi del corpo umano.
+Controlla molte funzioni del nostro organismo ed è coinvolto
+nei processi di apprendimento, memoria, movimento e
+comunicazione.
+</p>
+
+
+<p>
+Le emozioni sono risposte che possono comparire quando
+viviamo determinate situazioni o riceviamo alcuni stimoli.
+Possono influenzare i nostri pensieri, comportamenti e
+anche alcune funzioni del corpo.
+</p>
+
+
+<p>
+Diverse aree del cervello partecipano all'elaborazione
+delle emozioni. Per esempio, l'amigdala è coinvolta
+nel processamento di alcune risposte emotive, mentre
+l'ippocampo svolge un ruolo importante nella memoria.
+</p>
+
+
+<p>
+Studiare il cervello ci permette di comprendere meglio
+il comportamento umano e il modo in cui interagiamo
+con l'ambiente che ci circonda.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===== QUIZ ===== -->
+
+<section id="quiz">
+
+<h2>
+🎀 Mini Quiz
+</h2>
+
+<p class="subtitle">
+Poné a prueba lo que aprendiste.
+</p>
+
+
+<div class="quiz">
+
+
+<div class="question">
+
+<p>
+1. ¿Qué órgano está principalmente relacionado
+con el procesamiento de las emociones?
+</p>
+
+<label>
+<input type="radio" name="q1" value="1">
+El cerebro
+</label>
+
+<label>
+<input type="radio" name="q1" value="0">
+El estómago
+</label>
+
+<label>
+<input type="radio" name="q1" value="0">
+Los huesos
+</label>
+
+</div>
+
+
+<div class="question">
+
+<p>
+2. ¿Qué estructura participa en el procesamiento
+de determinadas respuestas emocionales?
+</p>
+
+<label>
+<input type="radio" name="q2" value="1">
+La amígdala
+</label>
+
+<label>
+<input type="radio" name="q2" value="0">
+El fémur
+</label>
+
+<label>
+<input type="radio" name="q2" value="0">
+La retina
+</label>
+
+</div>
+
+
+<div class="question">
+
+<p>
+3. ¿Las emociones pueden producir cambios físicos?
+</p>
+
+<label>
+<input type="radio" name="q3" value="1">
+Sí
+</label>
+
+<label>
+<input type="radio" name="q3" value="0">
+No
+</label>
+
+</div>
+
+
+<button onclick="corregir()">
+♡ Ver resultado
+</button>
+
+
+<div id="resultado"></div>
+
+</div>
+
+</section>
+
+
+<!-- ===== DECLARACIÓN DE IA ===== -->
+
+<section id="ia" class="ia">
+
+<div class="ia-box">
+
+<h2>
+🤖 Declaración de uso de IA
+</h2>
+
+
+<p>
+Para realizar este proyecto se utilizó Inteligencia
+Artificial como herramienta de apoyo durante el proceso
+de desarrollo.
+</p>
+
+
+<p>
+Se utilizó ChatGPT para ayudar a generar y organizar
+parte del código HTML, CSS y JavaScript, además de
+colaborar en la elaboración y revisión inicial de
+algunos textos.
+</p>
+
+
+<p>
+El código y el contenido fueron revisados, modificados
+y adaptados por los estudiantes para cumplir con los
+objetivos del proyecto.
+</p>
+
+
+<p>
+<strong>
+Herramienta utilizada:
+</strong>
+
+ChatGPT.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===== FUENTES ===== -->
+
+<section id="fuentes">
+
+<h2>
+📚 Fuentes
+</h2>
+
+
+<div class="sources">
+
+<ul>
+
+<li>
+Material de Ciencias de la Vida proporcionado
+durante el curso.
+</li>
+
+<li>
+National Institute of Mental Health (NIMH).
+</li>
+
+<li>
+National Institute of Neurological Disorders
+and Stroke (NINDS).
+</li>
+
+<li>
+Material educativo sobre anatomía y neurociencia.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- ===== PIE DE PÁGINA ===== -->
+
+<footer>
+
+<p>
+🧠 ♡ El cerebro y las emociones
+</p>
+
+<p>
+Proyecto de Ciencias de la Computación
+</p>
+
+<p>
+Scuola Italiana di Montevideo
+</p>
+
+</footer>
+
+
+<!-- ===== JAVASCRIPT ===== -->
+
+<script>
+
+function corregir() {
+
+let total = 0;
+
+let respondidas = 0;
+
+
+const preguntas = ["q1", "q2", "q3"];
+
+
+preguntas.forEach(function(nombre) {
+
+const respuesta =
+document.querySelector(
+'input[name="' + nombre + '"]:checked'
+);
+
+
+if (respuesta) {
+
+respondidas++;
+
+total += Number(respuesta.value);
+
+}
+
+});
+
+
+const resultado =
+document.getElementById("resultado");
+
+
+if (respondidas < 3) {
+
+resultado.textContent =
+"🌸 Respondé las 3 preguntas primero.";
+
+}
+
+else if (total === 3) {
+
+resultado.textContent =
+"🎀 ¡Perfecto! 3/3 respuestas correctas.";
+
+}
+
+else if (total === 2) {
+
+resultado.textContent =
+"💗 ¡Muy bien! 2/3 respuestas correctas.";
+
+}
+
+else if (total === 1) {
+
+resultado.textContent =
+"🌷 1/3. ¡Podés repasar el contenido e intentarlo de nuevo!";
+
+}
+
+else {
+
+resultado.textContent =
+"🌸 0/3. ¡No pasa nada! Intentá nuevamente.";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
