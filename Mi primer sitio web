@@ -4,14 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Biodiversidad de Uruguay</title>
+<title>El cerebro y las emociones</title>
 
 <style>
 
+/* ==============================
+CONFIGURACIÓN GENERAL
+============================== */
+
 * {
-box-sizing: border-box;
 margin: 0;
 padding: 0;
+box-sizing: border-box;
 }
 
 html {
@@ -19,271 +23,488 @@ scroll-behavior: smooth;
 }
 
 body {
-font-family: Arial, Helvetica, sans-serif;
-background-color: #f4f7f4;
-color: #26352b;
-line-height: 1.6;
+font-family: "Trebuchet MS", Arial, sans-serif;
+background: #fff7fa;
+color: #4a3440;
+line-height: 1.7;
 }
 
+/* ==============================
+ENCABEZADO
+============================== */
+
 header {
-background: linear-gradient(135deg, #1f5c42, #4d8b68);
-color: white;
+min-height: 500px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 text-align: center;
-padding: 70px 20px;
+
+padding: 50px 20px;
+
+background:
+radial-gradient(circle at 20% 20%, #ffd6e7 0%, transparent 30%),
+radial-gradient(circle at 80% 30%, #f8c9dc 0%, transparent 30%),
+linear-gradient(135deg, #fff0f6, #f8d7e6);
+
+position: relative;
+overflow: hidden;
+}
+
+header::before {
+content: "♡";
+position: absolute;
+font-size: 180px;
+color: rgba(255,255,255,0.4);
+left: 5%;
+top: 10%;
+}
+
+header::after {
+content: "✦";
+position: absolute;
+font-size: 150px;
+color: rgba(255,255,255,0.4);
+right: 8%;
+bottom: 5%;
 }
 
 header h1 {
-font-size: 45px;
-margin-bottom: 15px;
+font-size: 58px;
+color: #a83d6b;
+margin-bottom: 20px;
+position: relative;
 }
 
 header p {
-font-size: 19px;
-max-width: 750px;
-margin: auto;
+max-width: 700px;
+font-size: 20px;
+color: #704c5c;
+position: relative;
 }
 
+.heart {
+font-size: 65px;
+margin-bottom: 15px;
+}
+
+/* ==============================
+MENÚ
+============================== */
+
 nav {
-background-color: #173d2d;
-padding: 15px;
-text-align: center;
 position: sticky;
 top: 0;
 z-index: 1000;
+
+background: rgba(255, 240, 246, 0.95);
+backdrop-filter: blur(10px);
+
+padding: 17px;
+
+text-align: center;
+
+border-bottom: 1px solid #f0c4d7;
 }
 
 nav a {
-color: white;
 text-decoration: none;
-margin: 0 10px;
+color: #873557;
 font-weight: bold;
-font-size: 14px;
+margin: 0 12px;
+transition: 0.3s;
 }
 
 nav a:hover {
-color: #bde5c9;
+color: #d95c8c;
 }
+
+/* ==============================
+SECCIONES
+============================== */
 
 section {
 max-width: 1100px;
 margin: auto;
-padding: 60px 20px;
+padding: 80px 25px;
 }
 
 section h2 {
-color: #1f5c42;
-font-size: 32px;
+text-align: center;
+color: #a83d6b;
+font-size: 38px;
 margin-bottom: 20px;
-text-align: center;
 }
 
-section h3 {
-color: #347653;
-margin-bottom: 10px;
-}
-
-.intro {
+.subtitle {
 text-align: center;
-max-width: 850px;
-margin: auto;
+max-width: 750px;
+margin: 0 auto 40px;
+color: #765764;
 font-size: 18px;
 }
+
+/* ==============================
+INTRODUCCIÓN
+============================== */
+
+.intro-box {
+background: white;
+border-radius: 25px;
+padding: 40px;
+
+box-shadow: 0 10px 30px rgba(170, 72, 111, 0.12);
+
+border: 1px solid #f3d1df;
+}
+
+.intro-box p {
+margin-bottom: 15px;
+}
+
+/* ==============================
+TARJETAS
+============================== */
 
 .cards {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 gap: 25px;
-margin-top: 30px;
 }
 
 .card {
-background-color: white;
-border-radius: 15px;
-padding: 25px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-transition: transform 0.3s;
+background: white;
+padding: 30px;
+border-radius: 25px;
+
+box-shadow: 0 8px 25px rgba(170, 72, 111, 0.1);
+
+border: 1px solid #f3d1df;
+
+transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-transform: translateY(-5px);
+transform: translateY(-8px);
+box-shadow: 0 15px 35px rgba(170, 72, 111, 0.18);
+}
+
+.emoji {
+font-size: 50px;
+margin-bottom: 10px;
 }
 
 .card h3 {
-font-size: 22px;
-}
-
-.icon {
-font-size: 45px;
+color: #b34773;
 margin-bottom: 10px;
+font-size: 23px;
 }
 
-.species {
-background-color: #e6f1e9;
+/* ==============================
+CEREBRO
+============================== */
+
+#cerebro {
+background: #fff0f6;
+max-width: none;
 }
 
-.scientific {
-font-style: italic;
-color: #63766a;
-}
-
-
-.italiano {
-background-color: #eef5ef;
-border-top: 5px solid #4d8b68;
-border-bottom: 5px solid #4d8b68;
-}
-
-.italiano p {
-margin-bottom: 15px;
-}
-
-.conservation-list {
-margin-top: 20px;
-padding-left: 25px;
-}
-
-.conservation-list li {
-margin-bottom: 10px;
-}
-
-.quiz {
-background-color: white;
-border-radius: 15px;
-padding: 30px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-max-width: 750px;
+#cerebro .content {
+max-width: 1050px;
 margin: auto;
 }
 
+.brain-parts {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 20px;
+}
+
+.brain-part {
+background: rgba(255,255,255,0.8);
+border-radius: 20px;
+padding: 25px;
+border: 1px solid #efc5d7;
+}
+
+.brain-part h3 {
+color: #a83d6b;
+margin-bottom: 8px;
+}
+
+/* ==============================
+EMOCIONES
+============================== */
+
+.emotion {
+text-align: center;
+padding: 35px 20px;
+}
+
+.emotion span {
+display: block;
+font-size: 55px;
+margin-bottom: 10px;
+}
+
+.emotion h3 {
+color: #a83d6b;
+margin-bottom: 8px;
+}
+
+/* ==============================
+ITALIANO
+============================== */
+
+#italiano {
+background: linear-gradient(135deg, #fff7fa, #ffeaf2);
+border-top: 1px solid #f3c8d9;
+border-bottom: 1px solid #f3c8d9;
+max-width: none;
+}
+
+#italiano .italian-content {
+max-width: 900px;
+margin: auto;
+background: white;
+padding: 40px;
+border-radius: 25px;
+box-shadow: 0 10px 30px rgba(170, 72, 111, 0.1);
+}
+
+#italiano p {
+margin-bottom: 18px;
+}
+
+/* ==============================
+QUIZ
+============================== */
+
+.quiz {
+max-width: 750px;
+margin: auto;
+
+background: white;
+padding: 40px;
+
+border-radius: 25px;
+
+box-shadow: 0 10px 30px rgba(170, 72, 111, 0.12);
+}
+
 .question {
-margin-bottom: 25px;
+margin-bottom: 30px;
 }
 
 .question p {
 font-weight: bold;
+color: #8d3d5f;
 margin-bottom: 10px;
 }
 
-.question label {
+label {
 display: block;
-margin: 7px 0;
+margin: 8px 0;
+cursor: pointer;
+}
+
+input {
+accent-color: #d95c8c;
+margin-right: 7px;
 }
 
 button {
-background-color: #2d7651;
+display: block;
+margin: auto;
+
+background: linear-gradient(135deg, #d95c8c, #b34773);
 color: white;
+
 border: none;
-padding: 12px 25px;
-border-radius: 8px;
-cursor: pointer;
+border-radius: 30px;
+
+padding: 14px 30px;
+
 font-size: 16px;
+font-weight: bold;
+
+cursor: pointer;
+
+transition: 0.3s;
 }
 
 button:hover {
-background-color: #1f5c42;
+transform: scale(1.05);
 }
 
 #resultado {
-margin-top: 20px;
+text-align: center;
+margin-top: 25px;
 font-size: 20px;
 font-weight: bold;
+color: #a83d6b;
 }
 
+/* ==============================
+IA
+============================== */
 
-.ia {
-background-color: #fff8e7;
-border-left: 6px solid #d19b32;
+#ia {
+background: #fff1c9;
+max-width: none;
 }
 
+#ia .ia-content {
+max-width: 900px;
+margin: auto;
+}
 
+.ia-box {
+background: rgba(255,255,255,0.75);
+border-radius: 20px;
+padding: 35px;
+border: 1px solid #efdca8;
+}
+
+/* ==============================
+FUENTES
+============================== */
 
 .sources {
-background-color: #e9eeea;
+background: #fcecf3;
+border-radius: 25px;
+padding: 35px;
 }
 
 .sources ul {
 padding-left: 25px;
 }
 
-.sources li {
-margin-bottom: 8px;
-}
+/* ==============================
+FOOTER
+============================== */
 
 footer {
-background-color: #173d2d;
-color: white;
 text-align: center;
-padding: 30px 20px;
+background: #7e304f;
+color: white;
+padding: 35px 20px;
 }
 
+footer p {
+margin: 5px;
+}
+
+/* ==============================
+RESPONSIVE
+============================== */
 
 @media (max-width: 700px) {
 
 header h1 {
-font-size: 34px;
+font-size: 40px;
+}
+
+header p {
+font-size: 17px;
 }
 
 nav a {
 display: inline-block;
-margin: 5px;
+margin: 5px 7px;
+font-size: 13px;
 }
 
 section {
-padding: 45px 15px;
+padding: 55px 18px;
+}
+
+section h2 {
+font-size: 30px;
+}
+
+.intro-box,
+#italiano .italian-content,
+.quiz {
+padding: 25px;
 }
 }
+
 </style>
 </head>
 
+
 <body>
 
+<!-- ==============================
+PORTADA
+============================== -->
+
 <header>
-<h1>Biodiversidad de Uruguay</h1>
+
+<div class="heart">🧠</div>
+
+<h1>El cerebro y las emociones</h1>
 
 <p>
-Un recorrido por los ecosistemas, la flora y la fauna
-que forman parte de la riqueza natural de nuestro país.
+Descubrí cómo funciona nuestro cerebro, cómo surgen
+las emociones y por qué influyen tanto en nuestra
+forma de pensar y actuar.
 </p>
+
 </header>
 
+
+<!-- ==============================
+NAVEGACIÓN
+============================== -->
+
 <nav>
+
 <a href="#inicio">Inicio</a>
-<a href="#ecosistemas">Ecosistemas</a>
-<a href="#especies">Especies</a>
-<a href="#conservacion">Conservación</a>
+<a href="#cerebro">Cerebro</a>
+<a href="#emociones">Emociones</a>
 <a href="#italiano">Italiano</a>
 <a href="#quiz">Quiz</a>
 <a href="#ia">IA</a>
 <a href="#fuentes">Fuentes</a>
+
 </nav>
 
 
+<!-- ==============================
+INTRODUCCIÓN
+============================== -->
+
 <section id="inicio">
 
-<h2>¿Qué es la biodiversidad?</h2>
+<h2>💗 ¿Qué son las emociones?</h2>
 
-<div class="intro">
-
-<p>
-La biodiversidad es la variedad de seres vivos que existen
-en un determinado lugar. Incluye animales, plantas,
-microorganismos y también los ecosistemas en los que viven.
+<p class="subtitle">
+Las emociones forman parte de nuestra vida cotidiana
+y están relacionadas con diferentes procesos del cerebro.
 </p>
 
-<br>
+<div class="intro-box">
 
 <p>
-Uruguay posee una importante diversidad de ambientes
-naturales. Sus praderas, montes, humedales y costas
-constituyen hábitats para numerosas especies.
+Las emociones son respuestas que aparecen frente a
+diferentes situaciones, pensamientos o estímulos.
+Pueden influir en nuestra atención, memoria,
+comportamiento y relaciones con otras personas.
 </p>
 
-<br>
+<p>
+Aunque muchas veces pensamos en las emociones como
+algo separado del pensamiento, ambos procesos están
+estrechamente relacionados.
+</p>
 
 <p>
-Conocer esta diversidad permite comprender la importancia
-de proteger los ecosistemas y utilizar los recursos
-naturales de manera responsable.
+El cerebro recibe información del entorno, la procesa
+y genera respuestas que pueden incluir cambios físicos,
+pensamientos y comportamientos.
 </p>
 
 </div>
@@ -291,47 +512,153 @@ naturales de manera responsable.
 </section>
 
 
-<section id="ecosistemas">
+<!-- ==============================
+CEREBRO
+============================== -->
 
-<h2> Ecosistemas de Uruguay</h2>
+<section id="cerebro">
 
-<h3>Praderas</h3>
+<div class="content">
+
+<h2>🧠 Partes importantes del cerebro</h2>
+
+<p class="subtitle">
+Diferentes regiones cerebrales participan en procesos
+relacionados con la memoria, el aprendizaje, el
+movimiento y las emociones.
+</p>
+
+
+<div class="brain-parts">
+
+<div class="brain-part">
+
+<h3>Corteza cerebral</h3>
 
 <p>
-Son uno de los ambientes más característicos de Uruguay.
-Están dominadas principalmente por diferentes especies
-de gramíneas y poseen una gran diversidad de animales.
+Participa en funciones complejas como el
+pensamiento, la percepción, el lenguaje,
+la planificación y la toma de decisiones.
 </p>
 
 </div>
 
 
-<h3>Monte serrano</h3>
+<div class="brain-part">
+
+<h3>Amígdala</h3>
 
 <p>
-Se desarrolla principalmente en zonas de sierras y
-terrenos rocosos. Presenta árboles, arbustos y plantas
-adaptadas a las condiciones del ambiente.
+Está relacionada con el procesamiento de
+determinadas respuestas emocionales,
+especialmente aquellas relacionadas con
+situaciones relevantes o amenazantes.
 </p>
 
 </div>
 
 
-<h3>Humedales</h3>
+<div class="brain-part">
+
+<h3>Hipocampo</h3>
 
 <p>
-Son ambientes donde el agua tiene un papel fundamental.
-Funcionan como refugio y zona de alimentación y
-reproducción para numerosas especies.
+Tiene un papel fundamental en la formación
+y recuperación de determinados tipos de
+recuerdos y en la orientación espacial.
+</p>
+
+</div>
+
+
+<div class="brain-part">
+
+<h3>Hipotálamo</h3>
+
+<p>
+Participa en la regulación de diferentes
+funciones del organismo, como el hambre,
+la temperatura corporal y el sueño.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==============================
+EMOCIONES
+============================== -->
+
+<section id="emociones">
+
+<h2>🌸 Algunas emociones</h2>
+
+<p class="subtitle">
+Las emociones pueden aparecer ante situaciones muy
+diferentes y cada una puede cumplir distintas funciones.
 </p>
 
 
-<h3>Ambiente costero</h3>
+<div class="cards">
+
+<div class="card emotion">
+
+<span>😊</span>
+
+<h3>Alegría</h3>
 
 <p>
-Comprende playas, dunas, costas rocosas y otros
-ambientes relacionados con el océano Atlántico
-y el Río de la Plata.
+Puede aparecer ante experiencias agradables
+y favorecer la interacción social.
+</p>
+
+</div>
+
+
+<div class="card emotion">
+
+<span>😢</span>
+
+<h3>Tristeza</h3>
+
+<p>
+Puede aparecer frente a pérdidas o situaciones
+difíciles y favorecer la búsqueda de apoyo.
+</p>
+
+</div>
+
+
+<div class="card emotion">
+
+<span>😨</span>
+
+<h3>Miedo</h3>
+
+<p>
+Ayuda a detectar situaciones que pueden
+representar un peligro y preparar al organismo
+para responder.
+</p>
+
+</div>
+
+
+<div class="card emotion">
+
+<span>😡</span>
+
+<h3>Enojo</h3>
+
+<p>
+Puede aparecer cuando una persona percibe
+una situación como injusta, frustrante
+o problemática.
 </p>
 
 </div>
@@ -341,24 +668,31 @@ y el Río de la Plata.
 </section>
 
 
-<section id="especies" class="species">
+<!-- ==============================
+CEREBRO Y CUERPO
+============================== -->
 
-<h2>Flora y fauna</h2>
+<section>
+
+<h2>✨ Cerebro, emociones y cuerpo</h2>
+
+<p class="subtitle">
+Las emociones no ocurren únicamente "en la cabeza".
+También pueden producir cambios físicos.
+</p>
+
 
 <div class="cards">
 
 <div class="card">
 
-<h3>Zorro de campo</h3>
+<div class="emoji">💓</div>
 
-<p class="scientific">
-Lycalopex gymnocercus
-</p>
+<h3>Corazón</h3>
 
 <p>
-Es un mamífero que habita diferentes ambientes
-de Uruguay. Tiene una alimentación variada y
-cumple un papel importante dentro de los ecosistemas.
+Algunas emociones pueden producir cambios
+en la frecuencia cardíaca.
 </p>
 
 </div>
@@ -366,16 +700,13 @@ cumple un papel importante dentro de los ecosistemas.
 
 <div class="card">
 
-<h3>Venado de campo</h3>
+<div class="emoji">🫁</div>
 
-<p class="scientific">
-Ozotoceros bezoarticus
-</p>
+<h3>Respiración</h3>
 
 <p>
-Es un herbívoro característico de las praderas.
-Actualmente sus poblaciones requieren medidas de
-conservación debido a la pérdida de hábitat.
+Las situaciones emocionales pueden modificar
+temporalmente la respiración.
 </p>
 
 </div>
@@ -383,31 +714,13 @@ conservación debido a la pérdida de hábitat.
 
 <div class="card">
 
-<h3>Coronilla</h3>
+<div class="emoji">⚡</div>
 
-<p class="scientific">
-Scutia buxifolia
-</p>
+<h3>Sistema nervioso</h3>
 
 <p>
-Es un árbol nativo de Uruguay que puede encontrarse
-principalmente en diferentes tipos de montes.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>Ceibo</h3>
-
-<p class="scientific">
-Erythrina crista-galli
-</p>
-
-<p>
-Es un árbol nativo de la región y una de las especies
-vegetales más reconocidas de Uruguay.
+El sistema nervioso coordina respuestas
+del organismo frente a diferentes estímulos.
 </p>
 
 </div>
@@ -417,106 +730,85 @@ vegetales más reconocidas de Uruguay.
 </section>
 
 
-<section id="conservacion">
+<!-- ==============================
+ITALIANO
+============================== -->
 
-<h2>Conservación de la biodiversidad</h2>
+<section id="italiano">
 
-<div class="intro">
+<div class="italian-content">
+
+<h2>🇮🇹 Il cervello e le emozioni</h2>
 
 <p>
-Los ecosistemas pueden verse afectados por diferentes
-actividades humanas. La transformación del territorio,
-la contaminación, la introducción de especies exóticas
-y la pérdida de hábitats pueden reducir la biodiversidad.
+Il cervello è uno degli organi più complessi del
+corpo umano. Controlla molte funzioni del nostro
+organismo ed è coinvolto nei processi di
+apprendimento, memoria, movimento e comunicazione.
 </p>
 
-<br>
+<p>
+Le emozioni sono risposte che possono comparire
+quando viviamo determinate situazioni o riceviamo
+alcuni stimoli. Possono influenzare i nostri
+pensieri, comportamenti e anche alcune funzioni
+del corpo.
+</p>
 
 <p>
-Algunas acciones que contribuyen a su conservación son:
+Diverse aree del cervello partecipano
+all'elaborazione delle emozioni. Per esempio,
+l'amigdala è coinvolta nel processamento di
+alcune risposte emotive, mentre l'ippocampo
+svolge un ruolo importante nella memoria.
+</p>
+
+<p>
+Studiare il cervello ci permette di comprendere
+meglio il comportamento umano e il modo in cui
+interagiamo con l'ambiente che ci circonda.
 </p>
 
 </div>
 
-
-<ul class="conservation-list">
-
-<li>Proteger los ambientes naturales.</li>
-
-<li>Evitar la contaminación del agua y del suelo.</li>
-
-<li>Conservar los bosques y montes nativos.</li>
-
-<li>Proteger las especies amenazadas.</li>
-
-<li>Reducir y gestionar correctamente los residuos.</li>
-
-<li>Promover la educación ambiental.</li>
-
-</ul>
-
 </section>
 
 
-<section id="italiano" class="italiano">
-
-<h2>🇮🇹 La biodiversità dell'Uruguay</h2>
-
-<p>
-La biodiversità è la varietà degli esseri viventi presenti
-in un determinato ambiente. L'Uruguay possiede diversi
-ecosistemi, come praterie, boschi, zone umide e ambienti
-costieri.
-</p>
-
-<p>
-Le praterie sono uno degli ambienti più caratteristici
-del paese e ospitano numerose specie di piante e animali.
-Anche le zone umide sono molto importanti perché offrono
-rifugio e cibo a molte specie.
-</p>
-
-<p>
-La conservazione della biodiversità è fondamentale per
-mantenere l'equilibrio degli ecosistemi. Per questo motivo
-è importante proteggere gli ambienti naturali, evitare
-l'inquinamento e utilizzare le risorse in modo responsabile.
-</p>
-
-<p>
-Conoscere la natura del nostro paese ci permette di
-comprendere meglio il suo valore e l'importanza di
-conservarla per le generazioni future.
-</p>
-
-</section>
-
+<!-- ==============================
+QUIZ
+============================== -->
 
 <section id="quiz">
 
-<h2>¿Cuánto aprendiste?</h2>
+<h2>🎀 Mini Quiz</h2>
+
+<p class="subtitle">
+Poné a prueba lo que aprendiste.
+</p>
+
 
 <div class="quiz">
 
 <div class="question">
 
 <p>
-1. ¿Qué es la biodiversidad?
+1. ¿Qué órgano está principalmente relacionado
+con el procesamiento de las emociones?
 </p>
 
 <label>
 <input type="radio" name="q1" value="correct">
-La variedad de seres vivos y ecosistemas.
+El cerebro
 </label>
 
 <label>
 <input type="radio" name="q1" value="wrong">
-Un único tipo de ecosistema.
+El estómago
 </label>
 
 <label>
 <input type="radio" name="q1" value="wrong">
-Solamente las especies animales.
+Los huesos
 </label>
 
 </div>
@@ -525,23 +817,23 @@ Solamente las especies animales.
 <div class="question">
 
 <p>
-2. ¿Cuál es uno de los ambientes característicos
-de Uruguay?
+2. ¿Qué estructura participa en el procesamiento
+de determinadas respuestas emocionales?
 </p>
 
 <label>
 <input type="radio" name="q2" value="correct">
-La pradera.
+La amígdala
 </label>
 
 <label>
 <input type="radio" name="q2" value="wrong">
-La tundra.
+El fémur
 </label>
 
 <label>
 <input type="radio" name="q2" value="wrong">
-La taiga.
+La retina
 </label>
 
 </div>
@@ -550,29 +842,24 @@ La taiga.
 <div class="question">
 
 <p>
-3. ¿Por qué es importante conservar la biodiversidad?
+3. ¿Las emociones pueden producir cambios físicos?
 </p>
 
 <label>
 <input type="radio" name="q3" value="correct">
-Para mantener el equilibrio de los ecosistemas.
+Sí
 </label>
 
 <label>
 <input type="radio" name="q3" value="wrong">
-Para eliminar los ambientes naturales.
-</label>
-
-<label>
-<input type="radio" name="q3" value="wrong">
-Para reducir la cantidad de especies.
+No
 </label>
 
 </div>
 
 
 <button onclick="corregirQuiz()">
-Corregir respuestas
+💗 Ver resultado
 </button>
 
 <p id="resultado"></p>
@@ -581,32 +868,40 @@ Corregir respuestas
 
 </section>
 
-<section id="ia" class="ia">
 
-<h2>Declaración de uso de Inteligencia Artificial</h2>
+<!-- ==============================
+DECLARACIÓN DE IA
+============================== -->
+
+<section id="ia">
+
+<div class="ia-content">
+
+<h2>🤖 Declaración de uso de IA</h2>
+
+<div class="ia-box">
 
 <p>
-Para la realización de este proyecto se utilizaron
-herramientas de Inteligencia Artificial como apoyo
+Para realizar este proyecto se utilizó
+Inteligencia Artificial como herramienta de apoyo
 durante el proceso de desarrollo.
 </p>
 
 <br>
 
 <p>
-La IA fue utilizada principalmente para generar y revisar
-código HTML, CSS y JavaScript, proponer la estructura
-general del sitio y ayudar con la redacción inicial
-de algunos contenidos.
+Se utilizó ChatGPT para ayudar a generar y organizar
+parte del código HTML, CSS y JavaScript, además de
+colaborar en la elaboración y revisión inicial
+de algunos textos.
 </p>
 
 <br>
 
 <p>
-El contenido generado fue revisado y adaptado por los
-integrantes del equipo. La utilización de IA funcionó
-como una herramienta de apoyo y no como sustituto del
-trabajo realizado por los estudiantes.
+El código y el contenido fueron revisados,
+modificados y adaptados por los estudiantes
+para cumplir con los objetivos del proyecto.
 </p>
 
 <br>
@@ -615,76 +910,128 @@ trabajo realizado por los estudiantes.
 <strong>Herramienta utilizada:</strong> ChatGPT.
 </p>
 
+</div>
+
+</div>
+
 </section>
 
-<section id="fuentes" class="sources">
 
-<h2>Fuentes consultadas</h2>
+<!-- ==============================
+FUENTES
+============================== -->
+
+<section id="fuentes">
+
+<h2>📚 Fuentes</h2>
+
+<div class="sources">
 
 <ul>
 
 <li>
-Ministerio de Ambiente de Uruguay.
-Información sobre biodiversidad y ecosistemas.
+Material de Ciencias de la Vida proporcionado
+durante el curso.
 </li>
 
 <li>
-Sistema Nacional de Áreas Protegidas (SNAP).
+National Institute of Mental Health (NIMH).
 </li>
 
 <li>
-Materiales educativos proporcionados por la institución.
+National Institute of Neurological Disorders
+and Stroke (NINDS).
 </li>
 
 <li>
-Material de Ciencias de la Vida utilizado durante el curso.
+Material educativo sobre anatomía y
+neurociencia.
 </li>
 
 </ul>
 
+</div>
+
 </section>
 
 
+<!-- ==============================
+FOOTER
+============================== -->
+
 <footer>
+
+<p>🧠 ♡ El cerebro y las emociones</p>
 
 <p>
 Proyecto de Ciencias de la Computación
 </p>
 
 <p>
-Biodiversidad de Uruguay · Scuola Italiana
+Scuola Italiana di Montevideo
 </p>
 
 </footer>
+
+
+<!-- ==============================
+JAVASCRIPT
+============================== -->
+
 <script>
 
 function corregirQuiz() {
 
 let puntaje = 0;
 
+let respondidas = 0;
+
 const respuestas = document.querySelectorAll(
 'input[type="radio"]:checked'
 );
 
+
 respuestas.forEach(function(respuesta) {
 
+respondidas++;
+
 if (respuesta.value === "correct") {
+
 puntaje++;
+
 }
 
 });
 
-const resultado = document.getElementById("resultado");
 
-if (respuestas.length < 3) {
+const resultado =
+document.getElementById("resultado");
+
+
+if (respondidas < 3) {
 
 resultado.textContent =
-"Respondé todas las preguntas antes de corregir.";
+"🌸 Respondé todas las preguntas primero.";
+
+} else if (puntaje === 3) {
+
+resultado.textContent =
+"🎀 ¡Perfecto! 3/3 respuestas correctas.";
+
+} else if (puntaje === 2) {
+
+resultado.textContent =
+"💗 ¡Muy bien! 2/3 respuestas correctas.";
+
+} else if (puntaje === 1) {
+
+resultado.textContent =
+"🌷 1/3. ¡Podés volver a mirar el contenido!";
 
 } else {
 
 resultado.textContent =
-"Obtuviste " + puntaje + " de 3 respuestas correctas. ";
+"🌸 0/3. ¡No pasa nada! Intentá nuevamente.";
 
 }
 
